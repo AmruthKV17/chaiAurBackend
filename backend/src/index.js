@@ -6,15 +6,15 @@ dotenv.config({path : './env'})
 
 connectDB()
 .then(()=>{
-    app.on((err)=>{
-        console.log("Error occured after Mongodb connection:",err);
-    })
+    // app.on((err)=>{
+    //     console.log("Error occured after Mongodb connection:",err);
+    // })
     app.listen(process.env.PORT || 3001, ()=>{
         console.log(`App listening at http://localhost:${process.env.PORT}`)
     })
 })
 .catch((err)=>{
-    console.error("MongoConnection failed : ",err);
+    console.error("Mongo Connection failed : ",err); 
 })
 
 
