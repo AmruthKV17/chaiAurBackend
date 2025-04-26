@@ -1,13 +1,14 @@
 import mongoose , {Schema} from "mongoose";
-import jwt,{ JsonWebTokenError } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
 const userSchema = new Schema({
-    username : {
+    userName : {
         type : String,
         unique : true,
         required : true,
         lowercase : true,
+        sparse:true,
         trim : true,
         index : true
     },
@@ -18,7 +19,7 @@ const userSchema = new Schema({
         lowercase : true,
         trim : true
     },
-    fullname : {
+    fullName : {
         type : String,
         required : true,
         trim : true,
